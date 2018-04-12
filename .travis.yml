@@ -9,7 +9,6 @@ before_install:
     - pip install --upgrade pip setuptools
 
 install: 
-    - pip install -r requirements.txt
     - git clone https://github.com/phanrahan/magma
     - pip install -e magma
     - git clone https://github.com/phanrahan/mantle
