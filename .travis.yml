@@ -2,21 +2,12 @@ language: python
 python:
     - "3.6"
 
-before_install:
-    - sudo apt-get -qq update
-    - pip install --upgrade pip setuptools
-
 install: 
-    - git clone https://github.com/phanrahan/magma
-    - pip install -e magma
-    - git clone https://github.com/phanrahan/mantle
-    - pip install -e mantle
     - pip install pytest-cov
     - pip install fabricate
     - pip install -e .
 
 script: 
-    - if [[ $TRAVIS_PYTHON_VERSION == 3.6 ]]; then pytest --cov=mantle tests;else py.test --cov=mantle tests; fi
     - cd tests
     - ./bake
     - cd ${TRAVIS_BUILD_DIR}
